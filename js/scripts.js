@@ -6,7 +6,9 @@ function AddressBook() {
   }
 
 AddressBook.prototype.addContact = function(contact)  {
-    this.contacts.push(contact);
+//This prototype.assignId must be called before the contact property is pushed to the AB 
+    contact.id = this.assignId()
+    this.contacts.push(contact);    
 }
 // This new method will increment the 'this.currentId' property on the AD obj. by 1 and return the updated value.  This makes themunique by not repeating
 AddressBook.prototype.assignId = function ()  {
