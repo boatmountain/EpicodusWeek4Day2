@@ -23,10 +23,13 @@ AddressBook.prototype.findContact = function(id)  {
 // The method loops through the AB obj contacts array checking entry id against id provided to the "prototype.findContact"
 // 'For loop' is used because it can break out unlike a 'for each loop'
     for (var i=0; i < this.contacts.length; i++) {
+// To verify this array element's id property is the contact
+        if (this.contacts[i]) {
 // When match is found, the method is return
         if(this.contacts[i].id == id) {
             return this.contacts[i];
         }
+      }
     };
     return false
 }
