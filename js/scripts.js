@@ -26,10 +26,10 @@ AddressBook.prototype.findContact = function(id)  {
 // To verify this array element's id property is the contact
         if (this.contacts[i]) {
 // When match is found, the method is return
-        if(this.contacts[i].id == id) {
-            return this.contacts[i];
+            if(this.contacts[i].id == id) {
+                return this.contacts[i];
+            }
         }
-      }
     };
     return false
 }
@@ -38,9 +38,13 @@ AddressBook.prototype.findContact = function(id)  {
 AddressBook.prototype.deleteContact = function(id)  {
 //This method loops through the AB obj contacts array checking entry id against id provided to the "prototype.deleteContact"
     for (var i=0; i < this.contacts.length; i++)  {
-        if (this.contacts[i].id == id) {
-            delete this.contacts[i];
-            return true;
+// To check an array element's id property if that element is a contact
+        if (this.contacts[i]) {
+            if (this.contacts[i].id == id) {
+                delete this.contacts[i];
+                    return true;
+            
+            }
         }
     };
     return false;
