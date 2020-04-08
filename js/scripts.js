@@ -50,6 +50,18 @@ AddressBook.prototype.deleteContact = function(id)  {
     return false;
 }
 
+AddressBook.prototype.updateContact = function(id) {
+    for(var = 0; i = this.contacts.length; i++)  {
+        if(this.contacts[i]) {
+            if (this.contacts[i].id == id) {
+                update this.contacts[i];
+                    return
+            }
+        }
+    };
+    return false;
+}
+
 // Business Logic for Contacts  // "contacts" Objects
 function Contact(firstName, lastName, phoneNumber) {
     this.firstName = firstName;
